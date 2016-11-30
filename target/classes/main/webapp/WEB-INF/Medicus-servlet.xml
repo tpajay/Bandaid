@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+ 
+	<!-- indicate that Spring should automatically wire values into properties, methods, and constructors. -->
+	<context:annotation-config/>
+
+	<context:component-scan 
+   	base-package="com.tpajay.medicus, 
+   				  com.tpajay.medicus.model, 
+   				  com.tpajay.medicus.dao, 
+   				  com.tpajay.medicus.validator, 
+   				  com.tpajay.medicus.service, 
+   				  com.tpajay.medicus.security, 
+   				  com.tpajay.medicus.security.dao, 
+   				  com.tpajay.medicus.security.model, 
+   				  com.tpajay.medicus.security.service" />
+
+   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <property name="prefix" value="/WEB-INF/views/" />
+      <property name="suffix" value=".jsp" />
+   </bean>
+
+	<!-- Resource bundle(s) -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="/WEB-INF/messages" />
+	</bean>
+
+	<!-- hibernate.xml in web.xml for hibernate db configuration -->
+	<context:property-placeholder location="WEB-INF/jdbc.properties"/>
+
+	<tx:annotation-driven/>	    
+    <bean id="transactionManager"
+        class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+	
+	<mvc:annotation-driven/>
+	
+</beans>

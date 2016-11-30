@@ -1,0 +1,58 @@
+
+**ADDING RECORD - 2part:
+insert into rec_medhist: formid=1(auto generated), pid=1, phyid=3, medhist fields...
+insert into patient_record: formid=1, pid=1, phyid=3, MEDHIST, Medical History
+
+
+**RETRIVEING
+Patient records with ability to easily add new forms, per physician, without having to rework model and view.
+
+//get all records for a patient
+//reason to store entity is so that it is simple to add new forms
+//without having to change view
+get * from records where patient_id=? 
+join physician_id:physician name, join form entity:formname orderby entity, returns
+patient_id, physcian_id, entity(aka table), form_id
+1,2,REC_AUTH,1
+1,2,REC_AUTH,2
+1,2,REC_MEDHIST,1
+1,2,REC_MEDHIST,2
+1,2,REC_BLOOD,1
+1,2,REC_BLOOD,2
+*any record created would need to update this table with updated information.
+
+Entity column values:
+@entity: REC_AUTH, REC_MEDHIST, REC_BLOOD
+
+get patient
+add records
+return to controller/view [display records in list orderby physician/form_id, ability to click record for details]
+
+click record:
+
+
+for each row in records {
+		get entityname
+		
+		//get all records for patientid from "entity" table
+		List/Set records = session.get(entityname.class, pid)
+		
+		//put result in hashmap with entity as key
+		recs_hm = hashmap.put(entityname, records)
+		
+		Store in Patient entity, return to view
+		Patient patient = session.get(Patient.class, id)
+		patient.addRecords(rec_hm)
+		
+		return to controller
+		
+}
+
+VIEW:
+Patient name, etc
+records list:
+physician:date:form:some details
+   --click on a record
+		--load record details for read-only
+
+

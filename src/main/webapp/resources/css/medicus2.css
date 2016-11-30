@@ -1,0 +1,95 @@
+.medicusformerror {
+	color: #ff0000;
+	font-style: italic;
+	font-weight: bold;
+	}
+	
+.generic-container {
+	width:90%;
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	
+	}
+
+/*! html background #3b6797 */
+html{
+	background-color: white;
+	font-family:  sans-serif;
+}
+
+/*! body background #3b6797 */
+body{
+	background-color: white;
+}	
+
+.table {
+	font-family: "Verdana", sans-serif;
+}
+	
+/*! changing color of panel heading background 
+	#77C9D4 - teal
+	#a94442 - burgundy
+*/
+.panel-default > .panel-heading {
+  background-color: #a94442;
+}
+
+/*! nav background 
+	#709ac7 - dark blue
+	#c9ecf7 - light blue
+	#a7c4dc
+*/
+.navbg{
+	background-color: #709ac7;
+	}
+
+.adjustlogo {
+	padding: 5px;
+	}
+
+.navbar-nav > li{
+	padding-left:10px;
+	padding-right:10px;
+	}
+
+/* #3b5097 */
+.nav.navbar-nav.navbar-left li a {
+	color: white;	
+	}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #95b4d5;
+    color: white;
+}
+
+.activenavlink {
+    background-color: #95b4d5;
+    color: white;
+}
+
+.panel-title {
+	color: white;
+}
+
+/*! #dee8f2 #f0f5f9 */
+.panel-body {
+	background-color: #dee8f2;
+}
+
+/*! button colors, e.g. submit 
+	#a94442 - burgandy background
+	white - text color
+*/
+.btn.btn-secondary {
+    background-color: #a94442;
+    color: white;
+}
+
+.precords {
+	color: white;
+	font-weight: bold;
+}
+
+
+
