@@ -1,4 +1,4 @@
-package com.tpajay.medicus.dao;
+package com.tpajay.medicus.dao.TODO;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 //@Component
 @Repository
 @Transactional
-public class PatientDaoJMSImp {}
+public class PatientDaoJDBCImp{}
 
 /*
 implements PatientDaoInterface {

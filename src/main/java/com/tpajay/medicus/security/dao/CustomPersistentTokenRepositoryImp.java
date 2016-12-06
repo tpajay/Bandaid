@@ -14,20 +14,23 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.tpajay.medicus.security.model.UserSession;
 
-/*
- * Implementation of PersistentTokenRepository to use Hibernate for tokens
- */
+
+//Customer implementation of PersistentTokenRepository
+//capable of providing a remember-me service
+//The abstraction used by PersistentTokenBasedRememberMeServices 
+//to store the persistent login tokens for a user.
 @Repository("customTokenRepositoryDao")
 @Transactional
-public class CustomTokenRepositoryImp implements PersistentTokenRepository {
+public class CustomPersistentTokenRepositoryImp implements PersistentTokenRepository {
  
-    static final Logger logger = LoggerFactory.getLogger(CustomTokenRepositoryImp.class);
+    static final Logger logger = LoggerFactory.getLogger(CustomPersistentTokenRepositoryImp.class);
     
 	@Autowired
 	SessionFactory sessionFactory;
  
+	//create new token, store in USER_SESSIONS table
     public void createNewToken(PersistentRememberMeToken token) {
-    	logger.info("In CustomeTokenRepository, createNewToken(): " + token.getTokenValue());
+    	logger.info("In CustomPersistentTokenRepositoryImp, createNewToken(): " + token.getTokenValue());
         UserSession userSession = new UserSession();
         userSession.setUsername(token.getUsername());
         userSession.setSeries(token.getSeries());
@@ -36,8 +39,9 @@ public class CustomTokenRepositoryImp implements PersistentTokenRepository {
         sessionFactory.getCurrentSession().save(userSession);
     }
  
+    //retrieve token from USER_SESSIONS table for user
     public PersistentRememberMeToken getTokenForSeries(String seriesId) {
-    	logger.info("In CustomeTokenRepository, getTokenForSeries(): " + seriesId);
+    	logger.info("In CustomPersistentTokenRepositoryImp, getTokenForSeries(): " + seriesId);
         try {
             Criteria crit = sessionFactory.getCurrentSession().createCriteria(UserSession.class);
             crit.add(Restrictions.eq("series", seriesId));
@@ -52,8 +56,9 @@ public class CustomTokenRepositoryImp implements PersistentTokenRepository {
         }
     }
  
+    //delete a token from the USER_SESSIONS table for a user
     public void removeUserTokens(String username) {
-        logger.info("In CustomeTokenRepository, removeUserTokens(): " + username);
+        logger.info("In CustomPersistentTokenRepositoryImp, removeUserTokens(): " + username);
         Criteria crit = sessionFactory.getCurrentSession().createCriteria(UserSession.class);
         crit.add(Restrictions.eq("username", username));
         UserSession userSession = (UserSession) crit.uniqueResult();
@@ -64,8 +69,9 @@ public class CustomTokenRepositoryImp implements PersistentTokenRepository {
  
     }
  
+    //update token in the USER_SESSIONS for a user
     public void updateToken(String seriesId, String tokenValue, Date lastUsed) {
-        logger.info("In CustomeTokenRepository, updateToken(): " + seriesId);
+        logger.info("In CustomPersistentTokenRepositoryImp, updateToken(): " + seriesId);
         UserSession userSession = (UserSession)sessionFactory.getCurrentSession().get(UserSession.class, seriesId);
         userSession.setToken(tokenValue);
         userSession.setLast_login(lastUsed);

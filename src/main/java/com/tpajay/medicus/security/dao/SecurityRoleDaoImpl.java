@@ -17,7 +17,7 @@ import com.tpajay.medicus.security.model.SecurityRole;
 @Repository("securityRoleDao")
 public class SecurityRoleDaoImpl implements SecurityRoleDao {
 	
-    static final Logger logger = LoggerFactory.getLogger(CustomTokenRepositoryImp.class);
+    static final Logger logger = LoggerFactory.getLogger(CustomPersistentTokenRepositoryImp.class);
     
 	@Autowired
 	SessionFactory sessionFactory;

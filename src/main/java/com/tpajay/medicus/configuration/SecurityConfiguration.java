@@ -17,17 +17,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
-
-/*
- * Security configuration.  protects application URLs, validates submitted username/password, redirects to login form
- * Accessible to everyone:		/ & /list
- * Accessible only to Admin:	/newuser & /delete-user-*
- * Accessible to Admin & DBA:	/edit-user-*
- */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
  
+	//customer class that implements Spring Core UserDetailsService
     @Autowired
     @Qualifier("customUserDetailsService")
     UserDetailsService userDetailsService;
@@ -35,10 +29,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     PersistentTokenRepository tokenRepository;
     
-    
-    /* Allows for easily building in memory authentication, LDAP authentication, 
-     * JDBC based authentication, adding UserDetailsService, and adding AuthenticationProvider's.
-     */
     @Autowired
     public void configureMedicusSecurity(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService);
@@ -46,9 +36,23 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
  
     /* 
-     * loginPage("/login"): 			when authentication is required, redirect the browser to /login
+     * loginPage("/login"): when authentication is required, redirect the browser to /login
      * formLogin().loginPage("/login"):	we are in charge of rendering the login page when /login is requested
      */
+    /*
+     * FROM SPRING SITE:
+     * loginPage("/login"):
+     * when authentication is required, redirect the browser to /login
+     * 
+     * formLogin().loginPage("/login"):
+     * The line loginPage("/login") instructs Spring Security
+     * -when authentication is required, redirect the browser to /login
+     * -we are in charge of rendering the login page when /login is requested
+     * -when authentication attempt fails, redirect the browser to /login?error (since we have not specified otherwise)
+     * -we are in charge of rendering a failure page when /login?error is requested
+     * -when we successfully logout, redirect the browser to /login?logout (since we have not specified otherwise)
+     * -we are in charge of rendering a logout confirmation page when /login?logout is requested
+    */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()

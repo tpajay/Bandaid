@@ -7,7 +7,6 @@ import org.springframework.security.web.context.AbstractSecurityWebApplicationIn
 public class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
 	
 	static final Logger logger = LoggerFactory.getLogger(SecurityWebApplicationInitializer.class);
-
 	
 	//public SecurityWebApplicationInitializer() {
     //    super(SecurityConfiguration.class);

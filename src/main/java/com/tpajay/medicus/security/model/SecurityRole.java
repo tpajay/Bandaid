@@ -11,13 +11,13 @@ import javax.persistence.Table;
  
 @Entity
 @Table(name="SECURITY_ROLE")
-public class SecurityRole implements Serializable{
+public class SecurityRole implements Serializable {
  
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
  
     @Column(name="TYPE", length=15, unique=true, nullable=false)
-    private String type = SecurityRoleType.USER.getUserProfileType();
+    private String type = RoleType.PATIENT.getUserRole();
      
     public Integer getId() {
         return id;

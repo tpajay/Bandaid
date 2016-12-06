@@ -1,4 +1,4 @@
-package com.tpajay.medicus.controller;
+package com.tpajay.medicus.controller.TODO;
 
 import org.springframework.stereotype.Controller;
 

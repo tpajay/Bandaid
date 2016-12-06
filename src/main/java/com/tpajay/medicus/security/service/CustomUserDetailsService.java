@@ -2,7 +2,9 @@ package com.tpajay.medicus.security.service;
 
 import java.util.ArrayList;
 import java.util.List;
- 
+
+import javax.persistence.JoinTable;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +32,8 @@ public class CustomUserDetailsService implements UserDetailsService {
      
     @Autowired
     private PatientDaoInterface patientHibernateDao;
-     
+    
+    //Load Patient Details from DB using login id(email address)
     @Transactional(readOnly=true)
     public UserDetails loadUserByUsername(String loginId) throws UsernameNotFoundException {
     	Patient patient = patientHibernateDao.findByLoginId(loginId);
@@ -43,7 +46,8 @@ public class CustomUserDetailsService implements UserDetailsService {
                  true, true, true, true, getGrantedAuthorities(patient));
     }
  
-     
+    //When loading patient Hibernate also loads the patients security roles
+    //@JoinTable(name = "USER_SECURITY_ROLE",
     private List<GrantedAuthority> getGrantedAuthorities(Patient patient) {
     	
         List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();         
