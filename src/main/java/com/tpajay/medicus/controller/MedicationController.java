@@ -37,8 +37,7 @@ public class MedicationController {
 	 * using: jackson-annotations, jackson-core, jackson-databind for JSON
 	 */
 	
-	//returns list of all patients by patient id
-	//returns the complete patient list
+	//returns list of all medications for a patient - by patient id
 	@RequestMapping(value= "/meds/{pid}", method = RequestMethod.GET)
 	public ResponseEntity<List<PatientMedication>> getAllPatientMeds(@PathVariable("pid") Integer id) {
 		List<PatientMedication> list = medService.getPatientMedicationList(id);

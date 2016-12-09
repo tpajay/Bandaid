@@ -37,8 +37,7 @@ public class AllergyController {
 	 * using: jackson-annotations, jackson-core, jackson-databind for JSON
 	 */
 	
-	//returns list of all patients by patient id
-	//returns the complete patient list
+	//returns list of all allergies for a patient - by patient id
 	@RequestMapping(value= "/allergies/{pid}", method = RequestMethod.GET)
 	public ResponseEntity<List<PatientAllergy>> getAllPatientAllergies(@PathVariable("pid") Integer id) {
 		List<PatientAllergy> list = allergyService.getPatientAllergyList(id);

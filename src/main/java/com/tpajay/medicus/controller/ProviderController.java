@@ -37,8 +37,7 @@ public class ProviderController {
 	 * using: jackson-annotations, jackson-core, jackson-databind for JSON
 	 */
 	
-	//returns list of all patients by patient id
-	//returns the complete patient list
+	//returns list of all providers for a patient - by patient id
 	@RequestMapping(value= "/providers/{pid}", method = RequestMethod.GET)
 	public ResponseEntity<List<PatientProvider>> getAllPatientProviders(@PathVariable("pid") Integer id) {
 		List<PatientProvider> list = providerService.getPatientProviderList(id);

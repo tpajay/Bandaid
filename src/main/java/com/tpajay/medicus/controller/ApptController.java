@@ -37,8 +37,7 @@ public class ApptController {
 	 * using: jackson-annotations, jackson-core, jackson-databind for JSON
 	 */
 	
-	//returns list of all patients by patient id
-	//returns the complete patient list
+	//returns list of all appointments for a patient - by patient id
 	@RequestMapping(value= "/appts/{pid}", method = RequestMethod.GET)
 	public ResponseEntity<List<PatientAppt>> getAllPatientAppts(@PathVariable("pid") Integer id) {
 		List<PatientAppt> list = apptService.getPatientApptList(id);

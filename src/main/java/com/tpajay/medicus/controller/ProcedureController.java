@@ -37,8 +37,7 @@ public class ProcedureController {
 	 * using: jackson-annotations, jackson-core, jackson-databind for JSON
 	 */
 	
-	//returns list of all patients by patient id
-	//returns the complete patient list
+	//returns list of all procedures for a patient - by patient id
 	@RequestMapping(value= "/procedures/{pid}", method = RequestMethod.GET)
 	public ResponseEntity<List<PatientProcedure>> getAllPatientProcedures(@PathVariable("pid") Integer id) {
 		List<PatientProcedure> list = procedureService.getPatientProviderList(id);

@@ -20,8 +20,8 @@ public class PhysicianController {
 
 	private static final Logger logger = LoggerFactory.getLogger(PhysicianController.class);
 	
-	@Autowired
-	private PatientServiceInterface allergyService;
+	//@Autowired
+	//private PhysicianServiceInterface physicianService;
 	
 	/* 
 	 * REST methods to test Angular2 Components
@@ -29,13 +29,12 @@ public class PhysicianController {
 	 * using: jackson-annotations, jackson-core, jackson-databind for JSON
 	 */
 	
-	//returns list of all patients by patient id
-	//returns the complete patient list
+	//returns list of all physicians
 	/*
-	@RequestMapping(value= "/allergy/{pid}", method = RequestMethod.GET)
-	public ResponseEntity<List<PatientAllergy>> getAllPatients() {
-		List<PatientAllergy> list = allergyService.getPatientList();
-		return new ResponseEntity<List<PatientAllergy>>(list, HttpStatus.OK);
+	@RequestMapping(value= "/physicians", method = RequestMethod.GET)
+	public ResponseEntity<List<Physician>> getAllPhysicians() {
+		List<Physician> list = physicianService.getPhysicianList();
+		return new ResponseEntity<List<Physician>>(list, HttpStatus.OK);
 	}
 	*/
 	
