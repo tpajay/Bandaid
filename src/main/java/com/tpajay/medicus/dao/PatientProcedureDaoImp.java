@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,7 @@ public class PatientProcedureDaoImp implements PatientProcedureDaoInterface {
 		@SuppressWarnings("unchecked")
         List<PatientProcedure> resultList = (List<PatientProcedure>) sessionFactory.getCurrentSession()
                 .createCriteria(PatientProcedure.class)
+                .add( Restrictions.eq( "patientId", id) )
                 .setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 		logger.info(">>>>>> getPatientProcedureList list size: " + resultList.size());
 		return resultList;

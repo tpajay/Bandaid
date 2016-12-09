@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.tpajay.medicus.model.PatientProcedure;
-import com.tpajay.medicus.service.PatientProviderServiceInterface;
+import com.tpajay.medicus.service.PatientProcedureServiceInterface;
 
 /*
 * Interface for DB operations for patient procedures
@@ -29,7 +29,7 @@ public class ProcedureController {
 	private static final Logger logger = LoggerFactory.getLogger(ProcedureController.class);
 	
 	@Autowired
-	private PatientProviderServiceInterface procedureService;
+	private PatientProcedureServiceInterface procedureService;
 	
 	/* 
 	 * REST methods to test Angular2 Components
@@ -40,7 +40,7 @@ public class ProcedureController {
 	//returns list of all procedures for a patient - by patient id
 	@RequestMapping(value= "/procedures/{pid}", method = RequestMethod.GET)
 	public ResponseEntity<List<PatientProcedure>> getAllPatientProcedures(@PathVariable("pid") Integer id) {
-		List<PatientProcedure> list = procedureService.getPatientProviderList(id);
+		List<PatientProcedure> list = procedureService.getPatientProcedureList(id);
 		return new ResponseEntity<List<PatientProcedure>>(list, HttpStatus.OK);
 	}
 	

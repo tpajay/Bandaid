@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,11 @@ public class PatientProviderDaoImp implements PatientProviderDaoInterface {
 	@Autowired
 	SessionFactory sessionFactory;
 
+	/* [TODO]
+	 * Need to bring back the data from the providers table using patient_providers
+	 */
+	
+	
 	//return a single provider for a patient
 	@Transactional(readOnly = true)
 	public PatientProvider getPatientProviderById(int id) {
@@ -44,6 +50,7 @@ public class PatientProviderDaoImp implements PatientProviderDaoInterface {
 		@SuppressWarnings("unchecked")
         List<PatientProvider> resultList = (List<PatientProvider>) sessionFactory.getCurrentSession()
                 .createCriteria(PatientProvider.class)
+                .add( Restrictions.eq( "patientId", id) )
                 .setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 		logger.info(">>>>>> getPatientProviderList list size: " + resultList.size());
 		return resultList;
