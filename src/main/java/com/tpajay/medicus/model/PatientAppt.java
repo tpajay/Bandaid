@@ -29,5 +29,55 @@ public class PatientAppt {
 	
 	@Column(name="created_dttm")
 	private String createdDttm;
+
+	public int getApptId() {
+		return apptId;
+	}
+
+	public void setApptId(int apptId) {
+		this.apptId = apptId;
+	}
+
+	public int getPatientId() {
+		return patientId;
+	}
+
+	public void setPatientId(int patientId) {
+		this.patientId = patientId;
+	}
+
+	public int getPhysicianId() {
+		return physicianId;
+	}
+
+	public void setPhysicianId(int physicianId) {
+		this.physicianId = physicianId;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getApptDttm() {
+		return apptDttm;
+	}
+
+	public void setApptDttm(String apptDttm) {
+		this.apptDttm = apptDttm;
+	}
+
+	public String getCreatedDttm() {
+		return createdDttm;
+	}
+
+	public void setCreatedDttm(String createdDttm) {
+		this.createdDttm = createdDttm;
+	}
+	
+	
 	
 }

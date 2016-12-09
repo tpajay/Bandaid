@@ -44,5 +44,95 @@ public class Provider {
 	
 	@Column(name="updated_dttm")
 	private String updatedDttm;
+
+	public int getProviderId() {
+		return providerId;
+	}
+
+	public void setProviderId(int providerId) {
+		this.providerId = providerId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddr1() {
+		return addr1;
+	}
+
+	public void setAddr1(String addr1) {
+		this.addr1 = addr1;
+	}
+
+	public String getAddr2() {
+		return addr2;
+	}
+
+	public void setAddr2(String addr2) {
+		this.addr2 = addr2;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getZipcode() {
+		return zipcode;
+	}
+
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+
+	public String getPhoneMain() {
+		return phoneMain;
+	}
+
+	public void setPhoneMain(String phoneMain) {
+		this.phoneMain = phoneMain;
+	}
+
+	public String getPhoneFax() {
+		return phoneFax;
+	}
+
+	public void setPhoneFax(String phoneFax) {
+		this.phoneFax = phoneFax;
+	}
+
+	public String getCreatedDttm() {
+		return createdDttm;
+	}
+
+	public void setCreatedDttm(String createdDttm) {
+		this.createdDttm = createdDttm;
+	}
+
+	public String getUpdatedDttm() {
+		return updatedDttm;
+	}
+
+	public void setUpdatedDttm(String updatedDttm) {
+		this.updatedDttm = updatedDttm;
+	}
+	
+	
 	
 }

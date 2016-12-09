@@ -30,8 +30,8 @@ public class PatientMedication {
 	@Column(name="dosage")
 	private String dosage;
 	
-	@Column(name="interval")
-	private String inerval;
+	@Column(name="frequency")
+	private String frequency;
 	
 	@Column(name="duration")
 	private String duration;
@@ -44,5 +44,95 @@ public class PatientMedication {
 	
 	@Column(name="created_dttm")
 	private String createdDttm;
+
+	public int getPrescId() {
+		return prescId;
+	}
+
+	public void setPrescId(int prescId) {
+		this.prescId = prescId;
+	}
+
+	public int getPatientId() {
+		return patientId;
+	}
+
+	public void setPatientId(int patientId) {
+		this.patientId = patientId;
+	}
+
+	public int getPhysicianId() {
+		return physicianId;
+	}
+
+	public void setPhysicianId(int physicianId) {
+		this.physicianId = physicianId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getDosage() {
+		return dosage;
+	}
+
+	public void setDosage(String dosage) {
+		this.dosage = dosage;
+	}
+
+	public String getFrequency() {
+		return frequency;
+	}
+
+	public void setFrequency(String frequency) {
+		this.frequency = frequency;
+	}
+
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+
+	public String getStartDttm() {
+		return startDttm;
+	}
+
+	public void setStartDttm(String startDttm) {
+		this.startDttm = startDttm;
+	}
+
+	public String getEndDttm() {
+		return endDttm;
+	}
+
+	public void setEndDttm(String endDttm) {
+		this.endDttm = endDttm;
+	}
+
+	public String getCreatedDttm() {
+		return createdDttm;
+	}
+
+	public void setCreatedDttm(String createdDttm) {
+		this.createdDttm = createdDttm;
+	}
+	
+	
 	
 }

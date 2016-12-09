@@ -24,6 +24,9 @@ public class PatientAllergy {
 	@Column(name="description")
 	private String description;
 	
+	@Column(name="symptoms")
+	private String symptoms;	
+	
 	@Column(name="danger_level")
 	private String dangerLevel;
 	
@@ -32,5 +35,70 @@ public class PatientAllergy {
 	
 	@Column(name="created_dttm")
 	private String createdDttm;
+
+	public int getAllergyId() {
+		return allergyId;
+	}
+
+	public void setAllergyId(int allergyId) {
+		this.allergyId = allergyId;
+	}
+
+	public int getPatientId() {
+		return patientId;
+	}
+
+	public void setPatientId(int patientId) {
+		this.patientId = patientId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getSymptoms() {
+		return symptoms;
+	}
+
+	public void setSymptoms(String symptoms) {
+		this.symptoms = symptoms;
+	}
+
+	public String getDangerLevel() {
+		return dangerLevel;
+	}
+
+	public void setDangerLevel(String dangerLevel) {
+		this.dangerLevel = dangerLevel;
+	}
+
+	public String getSolution() {
+		return solution;
+	}
+
+	public void setSolution(String solution) {
+		this.solution = solution;
+	}
+
+	public String getCreatedDttm() {
+		return createdDttm;
+	}
+
+	public void setCreatedDttm(String createdDttm) {
+		this.createdDttm = createdDttm;
+	}
+	
 	
 }

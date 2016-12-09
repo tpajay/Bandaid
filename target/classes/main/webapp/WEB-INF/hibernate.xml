@@ -49,19 +49,31 @@
 				<prop key="hibernate.generate_statistics">${hibernate.generate_statistics}</prop>	            
 	        </props>
 	    </property>
+	    <!-- scan for Entities in package. context:component-scan does not work for Hibernate entities -->
+	    <property name="packagesToScan" value="com.tpajay.medicus.model"/>
+	    <!--
 	    <property name="annotatedClasses">
             <list>
                 <value>com.tpajay.medicus.model.Patient</value>
+                <value>com.tpajay.medicus.model.PatientAllergy</value>
+                <value>com.tpajay.medicus.model.PatientAppt</value>
+                <value>com.tpajay.medicus.model.PatientMedication</value>
+                <value>com.tpajay.medicus.model.PatientProcedure</value>
+                <value>com.tpajay.medicus.model.PatientProvider</value>
                 <value>com.tpajay.medicus.model.PatientRecord</value>
+                <value>com.tpajay.medicus.model.PatientRecordLab</value>
+                <value>com.tpajay.medicus.model.Physician</value>
+                <value>com.tpajay.medicus.model.Provider</value>
                 <value>com.tpajay.medicus.security.model.SecurityRole</value>
                 <value>com.tpajay.medicus.security.model.UserSession</value>
             </list>
         </property>
+        -->
 	</bean>
 	
 	
 	<!-- 
-		had to add this to get the security CustomUserDetailsService : loadUserByUsername() to work.
+		had to add this to hibernate.xml to get the security CustomUserDetailsService : loadUserByUsername() to work.
 		was seeing this error before: Could not obtain transaction-synchronized Session for current thread	
 	 -->
 	<tx:annotation-driven/>	    
