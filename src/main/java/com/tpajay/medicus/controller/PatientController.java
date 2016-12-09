@@ -41,6 +41,8 @@ import com.tpajay.medicus.service.PatientServiceInterface;
 * adding new patients, retrieving all patients[patients list,
 * and REST methods that return JSON data for Angular front-end.
 * 
+* Also contains Spring Security PersistentTokenBasedRememberMeServices 
+* 
 * @author  Jason Muse
 * LinkedIn: https://www.linkedin.com/in/jason-muse-570a03110
 * GitHub: https://github.com/tpajay

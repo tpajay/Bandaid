@@ -14,6 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.tpajay.medicus.model.PatientProvider;
 
 /*
+* Database opertaions for: Insurance Providers and Patient Provider(s)
+* 
 * @author  Jason Muse
 * LinkedIn: https://www.linkedin.com/in/jason-muse-570a03110
 * GitHub: https://github.com/tpajay

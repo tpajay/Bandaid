@@ -14,6 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.tpajay.medicus.model.PatientProcedure;
 
 /*
+* Database opertaions for: Patient Procedures
+* 
 * @author  Jason Muse
 * LinkedIn: https://www.linkedin.com/in/jason-muse-570a03110
 * GitHub: https://github.com/tpajay
