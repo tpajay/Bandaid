@@ -12,7 +12,12 @@ import javax.persistence.Table;
  * to rewrite the main interface, model and view.
  * Use the entity name stored in this Class to determine
  * which form to load after user clicks form from page view.
- */
+ * 
+ * @author  Jason Muse
+ * LinkedIn: https://www.linkedin.com/in/jason-muse-570a03110
+ * GitHub: https://github.com/tpajay
+ * Website: http://tpajay.com [coming soon with working applications]
+*/
 @Entity
 @Table(name="PATIENT_RECORD")
 public class PatientRecord  implements Comparable<PatientRecord>{

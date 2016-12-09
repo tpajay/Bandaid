@@ -19,6 +19,9 @@ import com.tpajay.medicus.service.PatientProviderServiceInterface;
 * Interface for DB operations for providers and retrieve the patients provider
 * 
 * @author  Jason Muse
+* LinkedIn: https://www.linkedin.com/in/jason-muse-570a03110
+* GitHub: https://github.com/tpajay
+* Website: http://tpajay.com [coming soon with working applications]
 */
 @Controller
 public class ProviderController {

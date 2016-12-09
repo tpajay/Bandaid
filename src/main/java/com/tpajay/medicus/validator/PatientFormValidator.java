@@ -10,9 +10,16 @@ import org.springframework.validation.Validator;
 
 import com.tpajay.medicus.model.Patient;
 
-//Validator for the Patient form.
-//Testing using Regular Expression, Pattern/Matcher
-//and using message properties file that contains the text
+/*
+* Validator for the Patient form.
+* Testing using Regular Expression, Pattern/Matcher
+* and using message properties file that contains the text
+* 
+* @author  Jason Muse
+* LinkedIn: https://www.linkedin.com/in/jason-muse-570a03110
+* GitHub: https://github.com/tpajay
+* Website: http://tpajay.com [coming soon with working applications]
+*/
 public class PatientFormValidator implements Validator {
 	
 	public boolean supports(Class<?> paramClass) {

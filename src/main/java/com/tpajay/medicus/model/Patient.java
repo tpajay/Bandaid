@@ -19,6 +19,14 @@ import javax.persistence.Transient;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tpajay.medicus.security.model.SecurityRole;
 
+/*
+* Patient
+* 
+* @author  Jason Muse
+* LinkedIn: https://www.linkedin.com/in/jason-muse-570a03110
+* GitHub: https://github.com/tpajay
+* Website: http://tpajay.com [coming soon with working applications]
+*/
 @Entity
 @Table(name="PATIENT")
 public class Patient {

@@ -10,6 +10,14 @@ import com.tpajay.medicus.dao.PatientMedicationDaoInterface;
 import com.tpajay.medicus.model.PatientAllergy;
 import com.tpajay.medicus.model.PatientMedication;
 
+/*
+* Services Patient Medication related Data
+* 
+* @author  Jason Muse
+* LinkedIn: https://www.linkedin.com/in/jason-muse-570a03110
+* GitHub: https://github.com/tpajay
+* Website: http://tpajay.com [coming soon with working applications]
+*/
 @Service
 public class PatientMedicationServiceImp implements PatientMedicationServiceInterface {
 	
