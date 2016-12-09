@@ -8,12 +8,11 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Login</title>
+	<title>Medicus Login</title>
     <!-- defined in Medicus-servlet.xml: <mvc:resources mapping="/resources/**" location="/resources/" /> -->
     <link rel="stylesheet" href='<c:url value="/resources/css/bootstrap.css" />' />
     <link rel="stylesheet" href='<c:url value="/resources/css/medicus.css" />' />
-    <link rel="stylesheet" href='<c:url value="/resources/css/app.css" />' />
-    
+    <link rel="stylesheet" href='<c:url value="/resources/css/app.css" />' />    
     <!--no fonts.. <link rel="stylesheet" href='<c:url value="/resources/css/font-awesome.css" />' /> -->    
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" />
     
