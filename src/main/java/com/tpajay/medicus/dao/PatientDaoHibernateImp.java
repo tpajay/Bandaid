@@ -117,5 +117,5 @@ public class PatientDaoHibernateImp implements PatientDaoInterface {
 		if (patient != null)
 			sessionFactory.getCurrentSession().delete(patient);
 	}
-	
+
 }
