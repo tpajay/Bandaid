@@ -9,7 +9,7 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import com.tpajay.medicus.model.Patient;
-
+ 
 /*
 * Validator for the Patient form.
 * Testing using Regular Expression, Pattern/Matcher
