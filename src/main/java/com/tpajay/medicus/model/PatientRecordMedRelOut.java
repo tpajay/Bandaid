@@ -10,7 +10,6 @@ import javax.persistence.Id;
 * @author  Jason Muse
 * LinkedIn: https://www.linkedin.com/in/jason-muse-570a03110
 * GitHub: https://github.com/tpajay
-* Website: http://tpajay.com [coming soon with working applications]
 */
 //@Entity
 //@Table(name="REC_AUTH_MEDREL_OUT")

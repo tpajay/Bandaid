@@ -23,7 +23,6 @@ import com.tpajay.medicus.model.PatientRecord;
 * @author  Jason Muse
 * LinkedIn: https://www.linkedin.com/in/jason-muse-570a03110
 * GitHub: https://github.com/tpajay
-* Website: http://tpajay.com [coming soon with working applications]
 */
 //@Component
 @Repository
