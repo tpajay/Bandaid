@@ -85,8 +85,8 @@ public class PatientController {
 	//returns list of all patients
 	@RequestMapping(value = "/patientlist", method = RequestMethod.GET)
 	public ModelAndView getPatientList() {
-		List patientList = patientService.getPatientList();
-		//viewname, modelname, modelObject
+		List patientList = patientService.getPatientList();		
+								//view name,    model name,   model Object
 		return new ModelAndView("patientlist", "patientList", patientList);
 	}
 	
