@@ -19,7 +19,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="PATIENT_RECORD")
-public class PatientRecord  implements Comparable<PatientRecord>{
+public class PatientRecord  implements Comparable<PatientRecord> {
 
 	@Id
 	@Column(name="PATIENT_RECORD_ID")
