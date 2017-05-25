@@ -53,7 +53,7 @@ public class PatientDaoHibernateImp implements PatientDaoInterface {
         List<PatientRecord> patientRecords = (List<PatientRecord>) sessionFactory.getCurrentSession()
                 .createCriteria(PatientRecord.class)
                 .add(Restrictions.eq("patientId", pid))
-                .setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();        
+                .setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 
         //convert List to sorted Set by form display name
         //should change this to sort by date, latest on top
